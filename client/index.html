@@ -1,13 +1,147 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <title>Expand Tools — Chrome Extensions</title>
-    <meta name="description" content="Expand Tools — Premium Chrome extensions built to enhance your everyday browsing. Focused, minimal, and beautifully crafted. Visit expand-tool.site" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5" />
+
+    <!-- ── Primary SEO ─────────────────────────────────── -->
+    <title>Expand Tools — Premium Chrome Extensions for Smarter Browsing</title>
+    <meta name="description" content="Expand Tools offers free, privacy-first Chrome extensions including Instagram Focus Mode and Quick Notes. Lightweight, beautifully crafted, and built for real people." />
+    <meta name="keywords" content="Chrome extensions, Instagram Focus Mode, Quick Notes extension, browser productivity, Chrome Web Store, free extensions, expand tools" />
+    <meta name="author" content="Expand Tools" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <link rel="canonical" href="https://expand-tool.site/" />
+
+    <!-- ── Open Graph (Facebook, LinkedIn, WhatsApp) ───── -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Expand Tools" />
+    <meta property="og:title" content="Expand Tools — Premium Chrome Extensions for Smarter Browsing" />
+    <meta property="og:description" content="Free, privacy-first Chrome extensions. Instagram Focus Mode hides distractions. Quick Notes keeps ideas at your fingertips. No tracking, no bloat." />
+    <meta property="og:url" content="https://expand-tool.site/" />
+    <meta property="og:image" content="https://expand-tool.site/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Expand Tools — Chrome Extensions" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- ── Twitter / X Card ────────────────────────────── -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Expand Tools — Premium Chrome Extensions" />
+    <meta name="twitter:description" content="Free, privacy-first Chrome extensions. Instagram Focus Mode & Quick Notes. No tracking, no bloat." />
+    <meta name="twitter:image" content="https://expand-tool.site/og-image.png" />
+    <meta name="twitter:image:alt" content="Expand Tools Chrome Extensions" />
+
+    <!-- ── Favicon ──────────────────────────────────────── -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/icon-instagram-focus.png" />
+    <link rel="apple-touch-icon" href="/icon-instagram-focus.png" />
+    <meta name="theme-color" content="#07071a" />
+
+    <!-- ── Performance hints ────────────────────────────── -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://d2xsxph8kpxj0f.cloudfront.net" crossorigin />
+    <link rel="dns-prefetch" href="https://chromewebstore.google.com" />
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+    <!-- ── JSON-LD Structured Data ──────────────────────── -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://expand-tool.site/#website",
+          "url": "https://expand-tool.site/",
+          "name": "Expand Tools",
+          "description": "Premium free Chrome extensions for smarter, distraction-free browsing.",
+          "publisher": {
+            "@id": "https://expand-tool.site/#organization"
+          },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://chromewebstore.google.com/search/expand+tools"
+            },
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://expand-tool.site/#organization",
+          "name": "Expand Tools",
+          "url": "https://expand-tool.site/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://expand-tool.site/icon-instagram-focus.png",
+            "width": 128,
+            "height": 128
+          },
+          "sameAs": [
+            "https://chromewebstore.google.com"
+          ]
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://expand-tool.site/#webpage",
+          "url": "https://expand-tool.site/",
+          "name": "Expand Tools — Premium Chrome Extensions for Smarter Browsing",
+          "isPartOf": { "@id": "https://expand-tool.site/#website" },
+          "about": { "@id": "https://expand-tool.site/#organization" },
+          "description": "Expand Tools offers free, privacy-first Chrome extensions including Instagram Focus Mode and Quick Notes.",
+          "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://expand-tool.site/"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "Instagram Focus Mode",
+          "operatingSystem": "Chrome",
+          "applicationCategory": "BrowserApplication",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "description": "Hide Reels, Stories, Explore, and Comments on Instagram with a single toggle. Includes Session Counter and Daily Limit Warning.",
+          "url": "https://chromewebstore.google.com",
+          "image": "https://expand-tool.site/icon-instagram-focus.png",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "ratingCount": "50"
+          }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "Quick Notes",
+          "operatingSystem": "Chrome",
+          "applicationCategory": "BrowserApplication",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "description": "A lightweight, always-accessible notepad inside Chrome. Jot ideas, copy snippets, or keep a to-do list without leaving your tab.",
+          "url": "https://chromewebstore.google.com/detail/quick-notes/bkejgoiaknodgmbdocmmkagllnhopnge",
+          "image": "https://expand-tool.site/icon-quick-notes.png",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "ratingCount": "50"
+          }
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>
