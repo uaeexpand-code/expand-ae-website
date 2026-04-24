@@ -1,5 +1,5 @@
 // ============================================================
-// Expand AE — Home Page
+// Expand Tools — Home Page
 // Design: Dark Cosmos / Premium Developer Tool
 // Fonts: Sora (display) + DM Sans (body)
 // Accent: Instagram gradient (#833ab4 → #c13584 → #e1306c → #f77737)
@@ -132,7 +132,7 @@ export default function Home() {
             <div className="w-8 h-8 rounded-lg ig-gradient flex items-center justify-center shadow-lg">
               <span className="text-white font-bold text-sm font-['Sora']">E</span>
             </div>
-            <span className="font-['Sora'] font-bold text-white text-base tracking-tight">Expand AE</span>
+            <span className="font-['Sora'] font-bold text-white text-base tracking-tight">Expand Tools</span>
           </a>
 
           {/* Desktop nav */}
@@ -436,7 +436,7 @@ export default function Home() {
         <div className="container">
           <Reveal className="text-center mb-16">
             <h2 className="font-['Sora'] font-bold text-4xl md:text-5xl text-white mb-4">
-              Why <span className="ig-gradient-text">Expand AE</span>?
+              Why <span className="ig-gradient-text">Expand Tools</span>?
             </h2>
             <p className="font-['DM_Sans'] text-white/50 text-lg max-w-md mx-auto">
               Every decision we make is guided by three principles.
@@ -500,7 +500,7 @@ export default function Home() {
                   Ready to take control?
                 </h2>
                 <p className="font-['DM_Sans'] text-white/55 text-lg mb-8 max-w-md mx-auto">
-                  Join thousands of users who browse smarter with Expand AE extensions.
+                  Join thousands of users who browse smarter with Expand Tools extensions.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                   <motion.a
@@ -536,10 +536,10 @@ export default function Home() {
             <div className="w-7 h-7 rounded-lg ig-gradient flex items-center justify-center">
               <span className="text-white font-bold text-xs font-['Sora']">E</span>
             </div>
-            <span className="font-['Sora'] font-semibold text-white/80 text-sm">Expand AE</span>
+            <span className="font-['Sora'] font-semibold text-white/80 text-sm">Expand Tools</span>
           </div>
           <p className="font-['DM_Sans'] text-xs text-white/30 text-center">
-            © {new Date().getFullYear()} Expand AE. All extensions are free to use.
+            © {new Date().getFullYear()} Expand Tools. All extensions are free to use.
           </p>
           <div className="flex items-center gap-6">
             <a href={CONTACT_URL} target="_blank" rel="noopener noreferrer"
