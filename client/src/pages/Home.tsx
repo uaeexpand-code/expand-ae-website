@@ -415,7 +415,12 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
             {products.map((product, i) => (
               <Reveal key={product.id} delay={i * 0.15}>
-                <TiltCard className="glass-card ig-gradient-border h-full" maxTilt={8}>
+                <motion.div
+                  whileHover={{ y: -6, boxShadow: "0 0 0 1px rgba(193,53,132,0.35), 0 20px 60px rgba(131,58,180,0.18)" }}
+                  transition={{ duration: 0.25, ease: "easeOut" }}
+                  className="glass-card h-full"
+                  style={{ border: "1px solid rgba(255,255,255,0.07)" }}
+                >
                   <div className="p-5 sm:p-6 md:p-8 h-full flex flex-col">
                     {/* Card header */}
                     <div className="flex items-start justify-between mb-5 md:mb-6 gap-3">
@@ -493,7 +498,7 @@ export default function Home() {
                       </motion.a>
                     </div>
                   </div>
-                </TiltCard>
+                </motion.div>
               </Reveal>
             ))}
           </div>
@@ -517,8 +522,13 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 md:gap-6">
             {whyItems.map((item, i) => (
               <Reveal key={item.title} delay={i * 0.12}>
-                <TiltCard className="glass-card h-full" maxTilt={10}>
-                  <motion.div className="p-6 md:p-8 text-center h-full flex flex-col items-center">
+                <motion.div
+                  whileHover={{ y: -5, boxShadow: "0 0 0 1px rgba(193,53,132,0.25), 0 16px 48px rgba(131,58,180,0.14)" }}
+                  transition={{ duration: 0.25, ease: "easeOut" }}
+                  className="glass-card h-full"
+                  style={{ border: "1px solid rgba(255,255,255,0.07)" }}
+                >
+                  <div className="p-6 md:p-8 text-center h-full flex flex-col items-center">
                     {/* Animated icon container */}
                     <motion.div
                       whileHover={{ scale: 1.15, rotate: 10 }}
@@ -536,8 +546,8 @@ export default function Home() {
                     </motion.div>
                     <h3 className="font-['Sora'] font-semibold text-base md:text-lg text-white mb-2 md:mb-3">{item.title}</h3>
                     <p className="font-['DM_Sans'] text-white/50 text-sm leading-relaxed">{item.desc}</p>
-                  </motion.div>
-                </TiltCard>
+                  </div>
+                </motion.div>
               </Reveal>
             ))}
           </div>
