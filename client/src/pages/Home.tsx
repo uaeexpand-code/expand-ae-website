@@ -108,7 +108,7 @@ export default function Home() {
   const heroY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
 
   return (
-    <div className="min-h-screen text-white overflow-x-hidden" style={{ background: "#0d1117", cursor: "none" }}>
+    <div className="min-h-screen text-white overflow-x-hidden" style={{ background: "#141824", cursor: "none" }}>
       <CustomCursor />
 
       {/* ── FLOATING PILL NAVBAR ─────────────────────────── */}
@@ -119,8 +119,8 @@ export default function Home() {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="hidden md:flex items-center gap-1 px-2 py-2 rounded-full"
           style={{
-            background: "rgba(22, 27, 39, 0.92)",
-            border: "1px solid rgba(255,255,255,0.08)",
+            background: "rgba(28, 33, 48, 0.95)",
+            border: "1px solid rgba(255,255,255,0.1)",
             backdropFilter: "blur(20px)",
             boxShadow: "0 4px 32px rgba(0,0,0,0.4)",
           }}
@@ -158,8 +158,8 @@ export default function Home() {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="md:hidden flex items-center justify-between w-full max-w-sm px-4 py-2.5 rounded-full"
           style={{
-            background: "rgba(22, 27, 39, 0.95)",
-            border: "1px solid rgba(255,255,255,0.08)",
+            background: "rgba(28, 33, 48, 0.97)",
+            border: "1px solid rgba(255,255,255,0.1)",
             backdropFilter: "blur(20px)",
           }}
         >
@@ -197,7 +197,7 @@ export default function Home() {
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
             className="fixed top-20 left-4 right-4 z-40 rounded-2xl overflow-hidden md:hidden"
-            style={{ background: "rgba(22,27,39,0.98)", border: "1px solid rgba(255,255,255,0.08)", backdropFilter: "blur(20px)" }}
+            style={{ background: "rgba(28,33,48,0.98)", border: "1px solid rgba(255,255,255,0.1)", backdropFilter: "blur(20px)" }}
           >
             <div className="p-4 flex flex-col gap-1">
               {NAV_LINKS.map((link) => (
@@ -231,7 +231,7 @@ export default function Home() {
         <MorphingBlob color1="#6366f1" color2="#8b5cf6" size={600} className="-top-40 left-1/2 -translate-x-1/2 z-[1] opacity-20" duration={10} />
 
         <motion.div
-          className="relative z-10 container text-center px-5 md:px-6 pt-28 pb-20"
+          className="relative z-10 container text-center px-5 md:px-6 pt-32 pb-16"
           style={{ opacity: heroOpacity, y: heroY }}
         >
           {/* Badge */}
@@ -239,7 +239,7 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-['DM_Sans'] mb-8"
+            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-['DM_Sans'] mb-5"
             style={{ background: "rgba(99,102,241,0.12)", border: "1px solid rgba(99,102,241,0.3)", color: "rgba(165,180,252,0.9)" }}
           >
             <motion.span
@@ -391,7 +391,7 @@ export default function Home() {
                   whileHover={{ y: -5, borderColor: "rgba(99,102,241,0.35)", boxShadow: "0 16px 48px rgba(0,0,0,0.4)" }}
                   transition={{ duration: 0.22, ease: "easeOut" }}
                   className="rounded-2xl p-6 md:p-7 h-full flex flex-col"
-                  style={{ background: "rgba(22,27,39,0.8)", border: "1px solid rgba(255,255,255,0.07)" }}
+                  style={{ background: "rgba(30,36,52,0.85)", border: "1px solid rgba(255,255,255,0.08)" }}
                 >
                   <div className="flex items-start justify-between mb-5 gap-3">
                     <div className="flex items-center gap-3 min-w-0">
@@ -491,7 +491,7 @@ export default function Home() {
                   whileHover={{ y: -4, borderColor: "rgba(99,102,241,0.25)" }}
                   transition={{ duration: 0.22, ease: "easeOut" }}
                   className="rounded-2xl p-6 md:p-7 text-center h-full"
-                  style={{ background: "rgba(22,27,39,0.8)", border: "1px solid rgba(255,255,255,0.07)" }}
+                  style={{ background: "rgba(30,36,52,0.85)", border: "1px solid rgba(255,255,255,0.08)" }}
                 >
                   <div className="w-11 h-11 rounded-full flex items-center justify-center mx-auto mb-4 text-white/60"
                     style={{ background: "rgba(99,102,241,0.1)", border: "1px solid rgba(99,102,241,0.2)" }}>
@@ -511,7 +511,7 @@ export default function Home() {
         <div className="container px-4 md:px-6">
           <Reveal>
             <div className="relative rounded-2xl overflow-hidden p-10 md:p-16 text-center max-w-3xl mx-auto"
-              style={{ background: "rgba(22,27,39,0.9)", border: "1px solid rgba(255,255,255,0.07)" }}>
+              style={{ background: "rgba(30,36,52,0.9)", border: "1px solid rgba(255,255,255,0.08)" }}>
               <div className="absolute inset-0 pointer-events-none"
                 style={{ background: "radial-gradient(ellipse 60% 50% at 50% 0%, rgba(99,102,241,0.1) 0%, transparent 70%)" }} />
               <div className="relative z-10">
