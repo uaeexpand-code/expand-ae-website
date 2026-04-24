@@ -611,13 +611,13 @@ export default function Product() {
             </h2>
           </Reveal>
 
-          <div className="grid sm:grid-cols-2 gap-5 max-w-2xl mx-auto">
+          <div className="flex flex-wrap justify-center gap-5 max-w-2xl mx-auto">
             {otherProducts.map((p, i) => (
               <Reveal key={p.id} delay={i * 0.1}>
                 <motion.div
                   whileHover={{ y: -5, borderColor: "rgba(99,102,241,0.3)" }}
                   transition={{ duration: 0.2, ease: "easeOut" }}
-                  className="rounded-2xl p-6 flex flex-col"
+                  className="rounded-2xl p-6 flex flex-col w-80"
                   style={{ background: "rgba(30,36,52,0.85)", border: "1px solid rgba(255,255,255,0.07)" }}
                 >
                   <div className="flex items-center gap-3 mb-4">
