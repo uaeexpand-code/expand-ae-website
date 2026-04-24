@@ -11,8 +11,8 @@ import { motion, useInView, useAnimation, AnimatePresence } from "framer-motion"
 import { ExternalLink, Star, Download, Mail, ChevronRight, Shield, Zap, Eye, FileText, X } from "lucide-react";
 
 const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663585227010/CukLp4cpqBzTmCAhXqc5uB/hero-bg-G6i7QUHidU223Lt99gAbkV.webp";
-const ICON_INSTAGRAM = "/icon-instagram-focus.svg";
-const ICON_QUICK_NOTES = "/icon-quick-notes.svg";
+const ICON_INSTAGRAM = "/icon-instagram-focus.png";
+const ICON_QUICK_NOTES = "/icon-quick-notes.png";
 const CONTACT_URL = "https://forms.gle/zWcpVci3s3NZNBqt6";
 
 const products = [
