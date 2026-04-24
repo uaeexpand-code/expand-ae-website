@@ -260,9 +260,6 @@ export default function Product() {
             boxShadow: "0 4px 32px rgba(0,0,0,0.4)",
           }}
         >
-          <Link href="/" className="flex items-center gap-2 px-3 py-1.5 mr-2">
-            <span className="w-7 h-7 rounded-lg bg-indigo-600 flex items-center justify-center text-white font-['Geist'] font-bold text-sm">E</span>
-          </Link>
           {NAV_LINKS.map((link) => (
             <a
               key={link.label}
