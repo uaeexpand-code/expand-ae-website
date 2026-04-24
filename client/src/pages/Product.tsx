@@ -168,6 +168,7 @@ export default function Product() {
   const product = products[params.id ?? ""];
   const [activeNav, setActiveNav] = useState("All Products");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -418,15 +419,27 @@ export default function Product() {
             {/* Right: screenshot */}
             <Reveal delay={0.2}>
               <motion.div
-                className="relative rounded-2xl overflow-hidden"
+                className="relative rounded-2xl overflow-hidden cursor-zoom-in group"
                 style={{ border: "1px solid rgba(255,255,255,0.08)" }}
                 whileHover={{ scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300, damping: 25 }}
+                onClick={() => setLightboxOpen(true)}
               >
                 <div
                   className="absolute inset-0 pointer-events-none z-10"
                   style={{ background: `radial-gradient(ellipse 80% 40% at 50% 0%, ${product.color1}18 0%, transparent 60%)` }}
                 />
+                {/* Expand hint overlay */}
+                <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none"
+                  style={{ background: "rgba(0,0,0,0.35)" }}
+                >
+                  <div className="flex items-center gap-2 px-4 py-2 rounded-full text-white text-sm font-['Inter'] font-medium"
+                    style={{ background: "rgba(255,255,255,0.12)", backdropFilter: "blur(8px)", border: "1px solid rgba(255,255,255,0.2)" }}
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" /></svg>
+                    View full size
+                  </div>
+                </div>
                 <img
                   src={product.screenshot}
                   alt={`${product.name} screenshot`}
@@ -435,6 +448,44 @@ export default function Product() {
                 />
               </motion.div>
             </Reveal>
+
+            {/* Lightbox */}
+            <AnimatePresence>
+              {lightboxOpen && (
+                <motion.div
+                  className="fixed inset-0 z-[9999] flex items-center justify-center p-4 md:p-8"
+                  style={{ background: "rgba(0,0,0,0.92)", backdropFilter: "blur(12px)" }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                  onClick={() => setLightboxOpen(false)}
+                >
+                  <motion.div
+                    className="relative max-w-5xl w-full"
+                    initial={{ scale: 0.88, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    exit={{ scale: 0.88, opacity: 0 }}
+                    transition={{ type: "spring", stiffness: 320, damping: 28 }}
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <button
+                      onClick={() => setLightboxOpen(false)}
+                      className="absolute -top-4 -right-4 z-10 w-9 h-9 rounded-full flex items-center justify-center text-white/70 hover:text-white transition-colors"
+                      style={{ background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.15)" }}
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+                    </button>
+                    <img
+                      src={product.screenshot}
+                      alt={`${product.name} screenshot`}
+                      className="w-full h-auto rounded-2xl"
+                      style={{ boxShadow: `0 32px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.08)` }}
+                    />
+                  </motion.div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         </div>
       </section>
