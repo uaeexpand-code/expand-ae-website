@@ -24,7 +24,6 @@ import {
 import ParticleCanvas from "../components/ParticleCanvas";
 import MorphingBlob from "../components/MorphingBlob";
 import TiltCard from "../components/TiltCard";
-import MagneticButton from "../components/MagneticButton";
 import SplitText from "../components/SplitText";
 import CountUp from "../components/CountUp";
 import CustomCursor from "../components/CustomCursor";
@@ -200,13 +199,15 @@ export default function Home() {
             ))}
           </nav>
 
-          <MagneticButton
+          <motion.a
             href="#products"
-            className="hidden md:flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-['DM_Sans'] font-medium text-white transition-all duration-200 hover:opacity-90"
+            whileHover={{ opacity: 0.88 }}
+            whileTap={{ scale: 0.97 }}
+            className="hidden md:flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-['DM_Sans'] font-medium text-white"
             style={{ background: "linear-gradient(135deg, #833ab4, #c13584, #e1306c, #f77737)" }}
           >
             Explore Extensions <ChevronRight className="w-3.5 h-3.5" />
-          </MagneticButton>
+          </motion.a>
 
           <button
             className="md:hidden text-white/60 hover:text-white p-2 -mr-1 touch-manipulation"
@@ -340,21 +341,25 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 1.1, ease: [0.22, 1, 0.36, 1] }}
             className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4"
           >
-            <MagneticButton
+            <motion.a
               href="#products"
+              whileHover={{ opacity: 0.88 }}
+              whileTap={{ scale: 0.97 }}
               className="w-full sm:w-auto flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-white font-['DM_Sans'] font-semibold text-sm shadow-lg shadow-purple-900/30"
               style={{ background: "linear-gradient(135deg, #833ab4, #c13584, #e1306c, #f77737)" }}
             >
               <Download className="w-4 h-4" /> Explore All Extensions
-            </MagneticButton>
-            <MagneticButton
+            </motion.a>
+            <motion.a
               href={CONTACT_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-white/70 hover:text-white font-['DM_Sans'] font-medium text-sm border border-white/10 hover:border-white/25 transition-colors duration-200 bg-white/5 hover:bg-white/10"
+              whileHover={{ borderColor: "rgba(255,255,255,0.25)", backgroundColor: "rgba(255,255,255,0.1)" }}
+              whileTap={{ scale: 0.97 }}
+              className="w-full sm:w-auto flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-white/70 hover:text-white font-['DM_Sans'] font-medium text-sm border border-white/10 bg-white/5 transition-colors duration-200"
             >
               <Mail className="w-4 h-4" /> Contact
-            </MagneticButton>
+            </motion.a>
           </motion.div>
         </motion.div>
 
@@ -465,25 +470,27 @@ export default function Home() {
 
                     {/* Actions */}
                     <div className="flex flex-col xs:flex-row items-stretch xs:items-center gap-2 sm:gap-3 mt-auto">
-                      <MagneticButton
+                      <motion.a
                         href={product.storeUrl}
                         target="_blank"
                         rel="noopener noreferrer"
+                        whileHover={{ opacity: 0.88 }}
+                        whileTap={{ scale: 0.97 }}
                         className="flex items-center justify-center gap-2 px-5 py-2.5 rounded-full text-white text-sm font-['DM_Sans'] font-semibold"
                         style={{ background: "linear-gradient(135deg, #833ab4, #c13584, #e1306c, #f77737)" }}
-                        strength={0.2}
                       >
                         <Download className="w-3.5 h-3.5" /> Install Free
-                      </MagneticButton>
-                      <MagneticButton
+                      </motion.a>
+                      <motion.a
                         href={product.storeUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-full text-white/60 hover:text-white text-sm font-['DM_Sans'] border border-white/10 hover:border-white/20 bg-white/5 hover:bg-white/10 transition-colors duration-200"
-                        strength={0.2}
+                        whileHover={{ borderColor: "rgba(255,255,255,0.2)", backgroundColor: "rgba(255,255,255,0.1)" }}
+                        whileTap={{ scale: 0.97 }}
+                        className="flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-full text-white/60 hover:text-white text-sm font-['DM_Sans'] border border-white/10 bg-white/5 transition-colors duration-200"
                       >
                         View on Store <ExternalLink className="w-3 h-3" />
-                      </MagneticButton>
+                      </motion.a>
                     </div>
                   </div>
                 </TiltCard>
@@ -584,21 +591,25 @@ export default function Home() {
                   Join thousands of users who browse smarter with Expand Tools extensions.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
-                  <MagneticButton
+                  <motion.a
                     href="#products"
+                    whileHover={{ opacity: 0.88 }}
+                    whileTap={{ scale: 0.97 }}
                     className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-3.5 rounded-full text-white font-['DM_Sans'] font-semibold text-sm shadow-lg shadow-purple-900/40"
                     style={{ background: "linear-gradient(135deg, #833ab4, #c13584, #e1306c, #f77737)" }}
                   >
                     <Download className="w-4 h-4" /> Get Extensions Free
-                  </MagneticButton>
-                  <MagneticButton
+                  </motion.a>
+                  <motion.a
                     href={CONTACT_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-3.5 rounded-full text-white/70 hover:text-white font-['DM_Sans'] font-medium text-sm border border-white/10 hover:border-white/25 transition-colors duration-200 bg-white/5 hover:bg-white/10"
+                    whileHover={{ borderColor: "rgba(255,255,255,0.25)", backgroundColor: "rgba(255,255,255,0.1)" }}
+                    whileTap={{ scale: 0.97 }}
+                    className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-3.5 rounded-full text-white/70 hover:text-white font-['DM_Sans'] font-medium text-sm border border-white/10 bg-white/5 transition-colors duration-200"
                   >
                     <Mail className="w-4 h-4" /> Contact
-                  </MagneticButton>
+                  </motion.a>
                 </div>
               </div>
             </div>
