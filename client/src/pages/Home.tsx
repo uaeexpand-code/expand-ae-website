@@ -22,8 +22,8 @@ import ParticleCanvas from "../components/ParticleCanvas";
 import MorphingBlob from "../components/MorphingBlob";
 import SplitText from "../components/SplitText";
 import CountUp from "../components/CountUp";
+import { Link } from "wouter";
 import CustomCursor from "../components/CustomCursor";
-
 const ICON_INSTAGRAM = "/icon-instagram-focus.png";
 const ICON_QUICK_NOTES = "/icon-quick-notes.png";
 const CONTACT_URL = "https://forms.gle/zWcpVci3s3NZNBqt6";
@@ -38,7 +38,7 @@ const products = [
     version: "v1.6.1",
     icon: ICON_INSTAGRAM,
     features: ["Hide Reels & Stories", "Hide Explore & Comments", "Session Counter", "Daily Limit Warning"],
-    storeUrl: "https://chromewebstore.google.com",
+    storeUrl: "https://chromewebstore.google.com/detail/gpklldeooblbpkkhhodklkdpjklhckda?utm_source=item-share-cb",
   },
   {
     id: "quick-notes",
@@ -49,7 +49,7 @@ const products = [
     version: "v2.3.4",
     icon: ICON_QUICK_NOTES,
     features: ["Instant access", "Auto-save", "Markdown support", "Sync across devices"],
-    storeUrl: "https://chromewebstore.google.com/detail/quick-notes/bkejgoiaknodgmbdocmmkagllnhopnge",
+    storeUrl: "https://chromewebstore.google.com/detail/bkejgoiaknodgmbdocmmkagllnhopnge?utm_source=item-share-cb",
   },
 ];
 
@@ -453,17 +453,13 @@ export default function Home() {
                     >
                       <Download className="w-3.5 h-3.5" /> Install Free
                     </motion.a>
-                    <motion.a
-                      href={product.storeUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ backgroundColor: "rgba(255,255,255,0.06)" }}
-                      whileTap={{ scale: 0.97 }}
+                    <Link
+                      href={`/products/${product.id}`}
                       className="flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-full text-sm font-['Inter'] text-white/40 hover:text-white/60 transition-colors duration-200"
                       style={{ background: "transparent", border: "1px solid rgba(255,255,255,0.06)" }}
                     >
-                      View on Store <ExternalLink className="w-3 h-3" />
-                    </motion.a>
+                      Details <ChevronRight className="w-3 h-3" />
+                    </Link>
                   </div>
                 </motion.div>
               </Reveal>
