@@ -93,7 +93,7 @@ function Reveal({ children, delay = 0, className = "" }: { children: React.React
 }
 
 const NAV_LINKS = [
-  { label: "Home", href: "/" },
+  { label: "Home", href: "#top", scrollTop: true },
   { label: "All Products", href: "#products" },
   { label: "Request Feature", href: CONTACT_URL, external: true },
   { label: "Support", href: CONTACT_URL, external: true },
@@ -128,14 +128,23 @@ export default function Home() {
           {NAV_LINKS.map((link, i) => (
             <motion.a
               key={link.label}
-              href={link.href}
+              href={link.external ? link.href : undefined}
               target={link.external ? "_blank" : undefined}
               rel={link.external ? "noopener noreferrer" : undefined}
               initial={{ opacity: 0, y: -8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 + i * 0.07 }}
-              onClick={() => setActiveNav(link.label)}
-              className="relative px-4 py-1.5 rounded-full text-sm font-['Inter'] font-medium transition-colors duration-200"
+              onClick={(e) => {
+                if (!link.external) e.preventDefault();
+                setActiveNav(link.label);
+                if (link.scrollTop) {
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                } else if (!link.external && link.href.startsWith("#")) {
+                  const el = document.querySelector(link.href);
+                  if (el) el.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
+              className="relative px-4 py-1.5 rounded-full text-sm font-['Inter'] font-medium transition-colors duration-200 cursor-pointer"
               style={{ color: activeNav === link.label ? "#fff" : "rgba(255,255,255,0.55)" }}
             >
               {activeNav === link.label && (
@@ -203,11 +212,21 @@ export default function Home() {
               {NAV_LINKS.map((link) => (
                 <a
                   key={link.label}
-                  href={link.href}
+                  href={link.external ? link.href : undefined}
                   target={link.external ? "_blank" : undefined}
                   rel={link.external ? "noopener noreferrer" : undefined}
-                  className="px-4 py-3 rounded-xl text-sm font-['Inter'] text-white/70 hover:text-white hover:bg-white/5 transition-colors"
-                  onClick={() => { setActiveNav(link.label); setMobileMenuOpen(false); }}
+                  className="px-4 py-3 rounded-xl text-sm font-['Inter'] text-white/70 hover:text-white hover:bg-white/5 transition-colors cursor-pointer"
+                  onClick={(e) => {
+                    if (!link.external) e.preventDefault();
+                    setActiveNav(link.label);
+                    setMobileMenuOpen(false);
+                    if (link.scrollTop) {
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                    } else if (!link.external && link.href.startsWith("#")) {
+                      const el = document.querySelector(link.href);
+                      if (el) el.scrollIntoView({ behavior: "smooth" });
+                    }
+                  }}
                 >
                   {link.label}
                 </a>
