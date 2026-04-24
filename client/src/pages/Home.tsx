@@ -34,7 +34,7 @@ const products = [
     name: "Instagram Focus Mode",
     tagline: "Hide Reels, Stories & More",
     description:
-      "Take control of what you see on Instagram. Hide Reels, Explore, Stories, Comments, and any nav item — with a single toggle. Includes a Session Counter and Daily Limit Warning.",
+      "Take control of what you see on Instagram. Hide Reels, Explore, Stories, Comments, and any nav item with a single toggle. Includes a session counter and daily limit warning.",
     version: "v1.6.1",
     icon: ICON_INSTAGRAM,
     features: ["Hide Reels & Stories", "Hide Explore & Comments", "Session Counter", "Daily Limit Warning"],
@@ -45,7 +45,7 @@ const products = [
     name: "Quick Notes",
     tagline: "Instant notes in your browser",
     description:
-      "A lightweight, always-accessible notepad right inside Chrome. Jot down ideas, copy snippets, or keep a to-do list — without leaving your tab.",
+      "A lightweight notepad always accessible inside Chrome. Jot down ideas, copy snippets, or keep a to-do list without ever leaving your current tab.",
     version: "v2.3.4",
     icon: ICON_QUICK_NOTES,
     features: ["Instant access", "Auto-save", "Markdown support", "Sync across devices"],
@@ -64,17 +64,17 @@ const whyItems = [
   {
     icon: <Shield className="w-5 h-5" />,
     title: "Privacy First",
-    desc: "No tracking, no analytics on your data, no external servers. Your preferences stay in your browser.",
+    desc: "No tracking and no analytics on your data. Your preferences stay securely in your browser.",
   },
   {
     icon: <Zap className="w-5 h-5" />,
     title: "Lightweight",
-    desc: "Each extension does one thing well. No bloat, no unnecessary permissions, no background processes.",
+    desc: "Each extension does one thing perfectly. No bloat, no extra permissions, and no background processes.",
   },
   {
     icon: <Eye className="w-5 h-5" />,
     title: "Beautifully Crafted",
-    desc: "Interfaces that feel native to Chrome. Thoughtful design, smooth interactions, and clear controls.",
+    desc: "Interfaces that feel native to Chrome. We focus on thoughtful design and clear controls.",
   },
 ];
 
@@ -135,7 +135,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 + i * 0.07 }}
               onClick={() => setActiveNav(link.label)}
-              className="relative px-4 py-1.5 rounded-full text-sm font-['DM_Sans'] font-medium transition-colors duration-200"
+              className="relative px-4 py-1.5 rounded-full text-sm font-['Inter'] font-medium transition-colors duration-200"
               style={{ color: activeNav === link.label ? "#fff" : "rgba(255,255,255,0.55)" }}
             >
               {activeNav === link.label && (
@@ -163,7 +163,7 @@ export default function Home() {
             backdropFilter: "blur(20px)",
           }}
         >
-          <span className="font-['Sora'] font-bold text-white text-sm">Expand Tools</span>
+          <span className="font-['Geist'] font-bold text-white text-sm">Expand Tools</span>
           <button
             className="text-white/60 hover:text-white p-1 touch-manipulation"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -206,7 +206,7 @@ export default function Home() {
                   href={link.href}
                   target={link.external ? "_blank" : undefined}
                   rel={link.external ? "noopener noreferrer" : undefined}
-                  className="px-4 py-3 rounded-xl text-sm font-['DM_Sans'] text-white/70 hover:text-white hover:bg-white/5 transition-colors"
+                  className="px-4 py-3 rounded-xl text-sm font-['Inter'] text-white/70 hover:text-white hover:bg-white/5 transition-colors"
                   onClick={() => { setActiveNav(link.label); setMobileMenuOpen(false); }}
                 >
                   {link.label}
@@ -239,7 +239,7 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-['DM_Sans'] mb-5"
+            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-['Inter'] mb-5"
             style={{ background: "rgba(99,102,241,0.12)", border: "1px solid rgba(99,102,241,0.3)", color: "rgba(165,180,252,0.9)" }}
           >
             <motion.span
@@ -247,13 +247,13 @@ export default function Home() {
               animate={{ scale: [1, 1.5, 1], opacity: [1, 0.5, 1] }}
               transition={{ duration: 1.5, repeat: Infinity }}
             />
-            Chrome Web Store — Verified Publisher
+            Chrome Web Store Verified Publisher
           </motion.div>
 
           {/* Headline */}
-          <h1 className="font-['Sora'] font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.1] tracking-tight mb-6 text-white">
-            <SplitText text="Enhance your everyday" className="block" delay={0.3} stagger={0.05} />
-            <SplitText text="browsing experience" className="block text-white/70" delay={0.6} stagger={0.04} />
+          <h1 className="font-['Geist'] font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.1] tracking-tight mb-6 text-white">
+            <SplitText text="Take back control" className="block" delay={0.3} stagger={0.05} />
+            <SplitText text="of your browser" className="block text-white/70" delay={0.6} stagger={0.04} />
           </h1>
 
           {/* Subtext */}
@@ -261,10 +261,10 @@ export default function Home() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.9 }}
-            className="font-['DM_Sans'] text-base md:text-lg text-white/45 max-w-md mx-auto mb-10 leading-relaxed"
+            className="font-['Inter'] text-base md:text-lg text-white/45 max-w-md mx-auto mb-10 leading-relaxed"
           >
             Free Chrome extensions built with attention to detail.
-            Focused, minimal, and crafted to respect your time.
+            Focused, minimal, and crafted to respect your focus and time.
           </motion.p>
 
           {/* Icon row — exactly like WebLX */}
@@ -300,7 +300,7 @@ export default function Home() {
               href="#products"
               whileHover={{ backgroundColor: "rgba(99,102,241,0.2)", borderColor: "rgba(99,102,241,0.5)" }}
               whileTap={{ scale: 0.97 }}
-              className="flex items-center gap-2 px-6 py-3 rounded-full text-sm font-['DM_Sans'] font-medium text-white/80 transition-colors duration-200"
+              className="flex items-center gap-2 px-6 py-3 rounded-full text-sm font-['Inter'] font-medium text-white/80 transition-colors duration-200"
               style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.12)" }}
             >
               Explore all products <ChevronRight className="w-4 h-4" />
@@ -311,7 +311,7 @@ export default function Home() {
               rel="noopener noreferrer"
               whileHover={{ backgroundColor: "rgba(255,255,255,0.08)" }}
               whileTap={{ scale: 0.97 }}
-              className="flex items-center gap-2 px-6 py-3 rounded-full text-sm font-['DM_Sans'] font-medium text-white/50 hover:text-white/70 transition-colors duration-200"
+              className="flex items-center gap-2 px-6 py-3 rounded-full text-sm font-['Inter'] font-medium text-white/50 hover:text-white/70 transition-colors duration-200"
               style={{ background: "transparent", border: "1px solid rgba(255,255,255,0.07)" }}
             >
               <Mail className="w-4 h-4" /> Contact
@@ -327,7 +327,7 @@ export default function Home() {
           className="hidden sm:flex absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex-col items-center gap-2"
           style={{ color: "rgba(255,255,255,0.2)" }}
         >
-          <span className="text-xs font-['DM_Sans'] tracking-widest uppercase">Scroll</span>
+          <span className="text-xs font-['Inter'] tracking-widest uppercase">Scroll</span>
           <motion.div
             animate={{ scaleY: [1, 0.4, 1], opacity: [0.3, 0.8, 0.3] }}
             transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
@@ -341,12 +341,12 @@ export default function Home() {
       <section className="py-14 md:py-20" style={{ borderTop: "1px solid rgba(255,255,255,0.05)", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
         <div className="container">
           <Reveal className="text-center mb-10">
-            <span className="inline-block px-3 py-1 rounded-full text-xs font-['DM_Sans'] mb-3"
+            <span className="inline-block px-3 py-1 rounded-full text-xs font-['Inter'] mb-3"
               style={{ background: "rgba(99,102,241,0.1)", border: "1px solid rgba(99,102,241,0.2)", color: "rgba(165,180,252,0.8)" }}>
-              our experience
+              our impact
             </span>
-            <h2 className="font-['Sora'] font-bold text-2xl md:text-3xl text-white mb-2">
-              Improving browsing through user-centered design
+            <h2 className="font-['Geist'] font-bold text-2xl md:text-3xl text-white mb-2">
+              Building tools that people actually want to use
             </h2>
           </Reveal>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-3xl mx-auto">
@@ -358,10 +358,10 @@ export default function Home() {
                     {s.icon}
                   </div>
                 </div>
-                <div className="font-['Sora'] font-bold text-2xl md:text-3xl text-white mb-1">
+                <div className="font-['Geist'] font-bold text-2xl md:text-3xl text-white mb-1">
                   <CountUp end={s.value} suffix={s.suffix} />
                 </div>
-                <div className="font-['DM_Sans'] text-xs text-white/40">{s.label}</div>
+                <div className="font-['Inter'] text-xs text-white/40">{s.label}</div>
               </Reveal>
             ))}
           </div>
@@ -372,15 +372,15 @@ export default function Home() {
       <section id="products" className="py-16 md:py-24">
         <div className="container px-4 md:px-6">
           <Reveal className="text-center mb-12">
-            <span className="inline-block px-3 py-1 rounded-full text-xs font-['DM_Sans'] mb-4"
+            <span className="inline-block px-3 py-1 rounded-full text-xs font-['Inter'] mb-4"
               style={{ background: "rgba(99,102,241,0.1)", border: "1px solid rgba(99,102,241,0.2)", color: "rgba(165,180,252,0.8)" }}>
-              all products
+              extensions
             </span>
-            <h2 className="font-['Sora'] font-bold text-3xl sm:text-4xl md:text-5xl text-white mb-4">
-              Tools built for real people
+            <h2 className="font-['Geist'] font-bold text-3xl sm:text-4xl md:text-5xl text-white mb-4">
+              Tools built for focus
             </h2>
-            <p className="font-['DM_Sans'] text-white/40 text-base md:text-lg max-w-md mx-auto">
-              Every extension solves a specific problem — no bloat, no tracking, no nonsense.
+            <p className="font-['Inter'] text-white/40 text-base md:text-lg max-w-md mx-auto">
+              Every extension solves a specific problem. No bloat, no tracking, and absolutely no nonsense.
             </p>
           </Reveal>
 
@@ -403,8 +403,8 @@ export default function Home() {
                         <img src={product.icon} alt={product.name} className="w-full h-full object-cover" />
                       </motion.div>
                       <div className="min-w-0">
-                        <h3 className="font-['Sora'] font-bold text-base md:text-lg text-white mb-0.5 leading-tight">{product.name}</h3>
-                        <p className="font-['DM_Sans'] text-xs text-white/40 truncate">{product.tagline}</p>
+                        <h3 className="font-['Geist'] font-bold text-base md:text-lg text-white mb-0.5 leading-tight">{product.name}</h3>
+                        <p className="font-['Inter'] text-xs text-white/40 truncate">{product.tagline}</p>
                       </div>
                     </div>
                     <div className="flex flex-col items-end gap-2 flex-shrink-0">
@@ -412,7 +412,7 @@ export default function Home() {
                         style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.07)", color: "rgba(255,255,255,0.25)" }}>
                         {product.version}
                       </span>
-                      <span className="flex items-center gap-1 text-xs text-green-400 font-['DM_Sans']">
+                      <span className="flex items-center gap-1 text-xs text-green-400 font-['Inter']">
                         <motion.span
                           className="w-1.5 h-1.5 rounded-full bg-green-400 flex-shrink-0"
                           animate={{ scale: [1, 1.6, 1], opacity: [1, 0.4, 1] }}
@@ -422,7 +422,7 @@ export default function Home() {
                     </div>
                   </div>
 
-                  <p className="font-['DM_Sans'] text-white/50 text-sm leading-relaxed mb-5 flex-grow">
+                  <p className="font-['Inter'] text-white/50 text-sm leading-relaxed mb-5 flex-grow">
                     {product.description}
                   </p>
 
@@ -433,7 +433,7 @@ export default function Home() {
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: fi * 0.05 }}
-                        className="text-xs font-['DM_Sans'] px-3 py-1 rounded-full"
+                        className="text-xs font-['Inter'] px-3 py-1 rounded-full"
                         style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.07)", color: "rgba(255,255,255,0.5)" }}
                       >
                         {f}
@@ -448,7 +448,7 @@ export default function Home() {
                       rel="noopener noreferrer"
                       whileHover={{ backgroundColor: "rgba(99,102,241,0.2)", borderColor: "rgba(99,102,241,0.5)" }}
                       whileTap={{ scale: 0.97 }}
-                      className="flex items-center justify-center gap-2 px-5 py-2.5 rounded-full text-sm font-['DM_Sans'] font-medium text-white/80 transition-colors duration-200"
+                      className="flex items-center justify-center gap-2 px-5 py-2.5 rounded-full text-sm font-['Inter'] font-medium text-white/80 transition-colors duration-200"
                       style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}
                     >
                       <Download className="w-3.5 h-3.5" /> Install Free
@@ -459,7 +459,7 @@ export default function Home() {
                       rel="noopener noreferrer"
                       whileHover={{ backgroundColor: "rgba(255,255,255,0.06)" }}
                       whileTap={{ scale: 0.97 }}
-                      className="flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-full text-sm font-['DM_Sans'] text-white/40 hover:text-white/60 transition-colors duration-200"
+                      className="flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-full text-sm font-['Inter'] text-white/40 hover:text-white/60 transition-colors duration-200"
                       style={{ background: "transparent", border: "1px solid rgba(255,255,255,0.06)" }}
                     >
                       View on Store <ExternalLink className="w-3 h-3" />
@@ -476,11 +476,11 @@ export default function Home() {
       <section className="py-16 md:py-24" style={{ borderTop: "1px solid rgba(255,255,255,0.05)" }}>
         <div className="container px-4 md:px-6">
           <Reveal className="text-center mb-12">
-            <h2 className="font-['Sora'] font-bold text-3xl sm:text-4xl text-white mb-4">
-              Why Expand Tools?
+            <h2 className="font-['Geist'] font-bold text-3xl sm:text-4xl text-white mb-4">
+              Why Expand Tools
             </h2>
-            <p className="font-['DM_Sans'] text-white/40 text-base max-w-sm mx-auto">
-              Every decision guided by three principles.
+            <p className="font-['Inter'] text-white/40 text-base max-w-sm mx-auto">
+              Every decision we make is guided by three core principles.
             </p>
           </Reveal>
 
@@ -497,8 +497,8 @@ export default function Home() {
                     style={{ background: "rgba(99,102,241,0.1)", border: "1px solid rgba(99,102,241,0.2)" }}>
                     {item.icon}
                   </div>
-                  <h3 className="font-['Sora'] font-semibold text-base text-white mb-2">{item.title}</h3>
-                  <p className="font-['DM_Sans'] text-white/40 text-sm leading-relaxed">{item.desc}</p>
+                  <h3 className="font-['Geist'] font-semibold text-base text-white mb-2">{item.title}</h3>
+                  <p className="font-['Inter'] text-white/40 text-sm leading-relaxed">{item.desc}</p>
                 </motion.div>
               </Reveal>
             ))}
@@ -526,18 +526,18 @@ export default function Home() {
                     </motion.div>
                   ))}
                 </motion.div>
-                <h2 className="font-['Sora'] font-bold text-2xl sm:text-3xl md:text-4xl text-white mb-3">
-                  Ready to take control?
+                <h2 className="font-['Geist'] font-bold text-2xl sm:text-3xl md:text-4xl text-white mb-3">
+                  Ready to upgrade your browser
                 </h2>
-                <p className="font-['DM_Sans'] text-white/40 text-base mb-8 max-w-sm mx-auto">
-                  Join thousands of users who browse smarter with Expand Tools.
+                <p className="font-['Inter'] text-white/40 text-base mb-8 max-w-sm mx-auto">
+                  Join thousands of people who browse smarter and faster with Expand Tools.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                   <motion.a
                     href="#products"
                     whileHover={{ backgroundColor: "rgba(99,102,241,0.2)", borderColor: "rgba(99,102,241,0.5)" }}
                     whileTap={{ scale: 0.97 }}
-                    className="w-full sm:w-auto flex items-center justify-center gap-2 px-7 py-3 rounded-full text-sm font-['DM_Sans'] font-medium text-white/80 transition-colors duration-200"
+                    className="w-full sm:w-auto flex items-center justify-center gap-2 px-7 py-3 rounded-full text-sm font-['Inter'] font-medium text-white/80 transition-colors duration-200"
                     style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}
                   >
                     <Download className="w-4 h-4" /> Get Extensions Free
@@ -548,7 +548,7 @@ export default function Home() {
                     rel="noopener noreferrer"
                     whileHover={{ backgroundColor: "rgba(255,255,255,0.05)" }}
                     whileTap={{ scale: 0.97 }}
-                    className="w-full sm:w-auto flex items-center justify-center gap-2 px-7 py-3 rounded-full text-sm font-['DM_Sans'] text-white/40 hover:text-white/60 transition-colors duration-200"
+                    className="w-full sm:w-auto flex items-center justify-center gap-2 px-7 py-3 rounded-full text-sm font-['Inter'] text-white/40 hover:text-white/60 transition-colors duration-200"
                     style={{ background: "transparent", border: "1px solid rgba(255,255,255,0.07)" }}
                   >
                     <Mail className="w-4 h-4" /> Contact
@@ -566,11 +566,11 @@ export default function Home() {
           <div className="flex items-center gap-2">
             <div className="w-6 h-6 rounded-lg flex items-center justify-center flex-shrink-0"
               style={{ background: "rgba(99,102,241,0.2)", border: "1px solid rgba(99,102,241,0.3)" }}>
-              <span className="text-indigo-300 font-bold text-xs font-['Sora']">E</span>
+              <span className="text-indigo-300 font-bold text-xs font-['Geist']">E</span>
             </div>
-            <span className="font-['Sora'] font-semibold text-sm" style={{ color: "rgba(255,255,255,0.6)" }}>Expand Tools</span>
+            <span className="font-['Geist'] font-semibold text-sm" style={{ color: "rgba(255,255,255,0.6)" }}>Expand Tools</span>
           </div>
-          <p className="font-['DM_Sans'] text-xs order-last md:order-none" style={{ color: "rgba(255,255,255,0.2)" }}>
+          <p className="font-['Inter'] text-xs order-last md:order-none" style={{ color: "rgba(255,255,255,0.2)" }}>
             © {new Date().getFullYear()} Expand Tools. All extensions are free to use.
           </p>
           <div className="flex items-center gap-5">
@@ -580,7 +580,7 @@ export default function Home() {
             ].map((link) => (
               <motion.a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer"
                 whileHover={{ color: "rgba(255,255,255,0.6)" }}
-                className="font-['DM_Sans'] text-xs transition-colors"
+                className="font-['Inter'] text-xs transition-colors"
                 style={{ color: "rgba(255,255,255,0.25)" }}>
                 {link.label}
               </motion.a>
