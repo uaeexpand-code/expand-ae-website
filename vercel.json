@@ -1,5 +1,5 @@
 {
-  "buildCommand": "pnpm exec vite build --config vite.config.prod.ts && cp client/public/icon-instagram-focus.svg dist/public/ && cp client/public/icon-quick-notes.svg dist/public/ && rm -rf dist/public/__manus__",
+  "buildCommand": "pnpm exec vite build --config vite.config.prod.ts",
   "outputDirectory": "dist/public",
   "installCommand": "pnpm install",
   "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
