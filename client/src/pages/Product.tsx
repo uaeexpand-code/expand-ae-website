@@ -33,6 +33,7 @@ const products: Record<string, {
   longDescription: string;
   version: string;
   icon: string;
+  screenshot: string;
   storeUrl: string;
   users: string;
   reviews: string;
@@ -52,6 +53,7 @@ const products: Record<string, {
       "Instagram is designed to keep you scrolling. Instagram Focus Mode puts you back in control. With a single toggle you can hide Reels, Explore, Stories, Comments, and any navigation item you don't need. It also includes a session counter so you can see exactly how long you've been on the site, and a daily limit warning to help you stay on track.",
     version: "v1.6.1",
     icon: ICON_INSTAGRAM,
+    screenshot: "/screenshot-instagram-focus.png",
     storeUrl: "https://chromewebstore.google.com/detail/gpklldeooblbpkkhhodklkdpjklhckda?utm_source=item-share-cb",
     users: "500+",
     reviews: "20+",
@@ -102,6 +104,7 @@ const products: Record<string, {
       "Quick Notes is the notepad that lives inside your browser. Click the extension icon and a clean, minimal notepad opens instantly. Everything you type is saved automatically, so you never lose a thought. Whether you're copying a snippet, drafting a quick message, or keeping a running to-do list, Quick Notes is always one click away.",
     version: "v2.3.4",
     icon: ICON_QUICK_NOTES,
+    screenshot: "/screenshot-quick-notes.png",
     storeUrl: "https://chromewebstore.google.com/detail/bkejgoiaknodgmbdocmmkagllnhopnge?utm_source=item-share-cb",
     users: "1000+",
     reviews: "30+",
@@ -412,38 +415,25 @@ export default function Product() {
               </Reveal>
             </div>
 
-            {/* Right: visual card */}
+            {/* Right: screenshot */}
             <Reveal delay={0.2}>
-              <div
-                className="relative rounded-2xl overflow-hidden p-8 flex flex-col items-center justify-center min-h-[280px] md:min-h-[340px]"
-                style={{
-                  background: `linear-gradient(135deg, ${product.color1}22, ${product.color2}22)`,
-                  border: "1px solid rgba(255,255,255,0.08)",
-                }}
+              <motion.div
+                className="relative rounded-2xl overflow-hidden"
+                style={{ border: "1px solid rgba(255,255,255,0.08)" }}
+                whileHover={{ scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 300, damping: 25 }}
               >
                 <div
-                  className="absolute inset-0 pointer-events-none"
-                  style={{ background: `radial-gradient(ellipse 70% 60% at 50% 50%, ${product.color1}18 0%, transparent 70%)` }}
+                  className="absolute inset-0 pointer-events-none z-10"
+                  style={{ background: `radial-gradient(ellipse 80% 40% at 50% 0%, ${product.color1}18 0%, transparent 60%)` }}
                 />
-                <motion.img
-                  src={product.icon}
-                  alt={product.name}
-                  className="relative z-10 w-28 h-28 md:w-36 md:h-36 rounded-3xl mb-6"
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
-                  style={{ imageRendering: "crisp-edges", boxShadow: `0 24px 64px ${product.color1}55` }}
+                <img
+                  src={product.screenshot}
+                  alt={`${product.name} screenshot`}
+                  className="w-full h-auto block"
+                  style={{ maxHeight: "420px", objectFit: "cover", objectPosition: "top" }}
                 />
-                <div className="relative z-10 text-center">
-                  <p className="font-['Geist'] font-bold text-white text-xl mb-1">{product.name}</p>
-                  <p className="font-['Inter'] text-white/40 text-sm">{product.tagline}</p>
-                  <span
-                    className="inline-block mt-3 px-3 py-1 rounded-full text-xs font-['JetBrains_Mono'] font-medium"
-                    style={{ background: "rgba(255,255,255,0.07)", color: "rgba(255,255,255,0.4)" }}
-                  >
-                    {product.version}
-                  </span>
-                </div>
-              </div>
+              </motion.div>
             </Reveal>
           </div>
         </div>
