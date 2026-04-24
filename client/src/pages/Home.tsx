@@ -271,7 +271,7 @@ export default function Home() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.5 + i * 0.1, ease: [0.22, 1, 0.36, 1] }}
                 whileHover={{ y: -6, scale: 1.08 }}
-                className="w-14 h-14 rounded-2xl overflow-hidden shadow-xl ring-1 ring-white/10 cursor-pointer"
+                className="ext-icon cursor-pointer"
                 title={p.name}
               >
                 <img src={p.icon} alt={p.name} className="w-full h-full object-cover" />
@@ -367,7 +367,7 @@ export default function Home() {
                       <motion.div
                         whileHover={{ scale: 1.1, rotate: 3 }}
                         transition={{ type: "spring", stiffness: 400, damping: 15 }}
-                        className="w-16 h-16 rounded-2xl overflow-hidden shadow-xl ring-1 ring-white/10 flex-shrink-0"
+                        className="ext-icon ext-icon-lg"
                       >
                         <img src={product.icon} alt={product.name} className="w-full h-full object-cover" />
                       </motion.div>
