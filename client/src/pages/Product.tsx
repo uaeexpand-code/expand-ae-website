@@ -10,6 +10,7 @@ import {
   ExternalLink, Check, Users, MessageSquare, Package,
 } from "lucide-react";
 import { Link, useParams } from "wouter";
+import { Helmet } from "react-helmet-async";
 import ParticleCanvas from "../components/ParticleCanvas";
 import MorphingBlob from "../components/MorphingBlob";
 import CustomCursor from "../components/CustomCursor";
@@ -184,8 +185,63 @@ export default function Product() {
 
   const otherProducts = Object.values(products).filter(p => p.id !== product.id);
 
+  const pageTitle = `${product.name} — Free Chrome Extension | Expand Tools`;
+  const pageDesc = product.longDescription.slice(0, 155);
+  const pageUrl = `https://expand-tool.site/products/${product.id}`;
+  const pageImage = `https://expand-tool.site/${product.id === "instagram-focus" ? "icon-instagram-focus" : "icon-quick-notes"}.png`;
+
   return (
     <div className="min-h-screen" style={{ background: "#141824" }}>
+      <Helmet>
+        {/* Primary */}
+        <title>{pageTitle}</title>
+        <meta name="description" content={pageDesc} />
+        <meta name="keywords" content={`${product.name}, Chrome extension, ${product.tags.join(", ")}, free extension, Expand Tools`} />
+        <link rel="canonical" href={pageUrl} />
+        <meta name="robots" content="index, follow" />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Expand Tools" />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDesc} />
+        <meta property="og:url" content={pageUrl} />
+        <meta property="og:image" content={pageImage} />
+        <meta property="og:image:width" content="128" />
+        <meta property="og:image:height" content="128" />
+        <meta property="og:image:alt" content={`${product.name} icon`} />
+        <meta property="og:locale" content="en_US" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={pageDesc} />
+        <meta name="twitter:image" content={pageImage} />
+
+        {/* JSON-LD */}
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": product.name,
+          "operatingSystem": "Chrome",
+          "applicationCategory": "BrowserApplication",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+          "description": product.longDescription,
+          "url": product.storeUrl,
+          "image": pageImage,
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": product.rating,
+            "ratingCount": product.reviews.replace("+", "")
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Expand Tools",
+            "url": "https://expand-tool.site"
+          }
+        })}</script>
+      </Helmet>
+
       <CustomCursor />
       <ParticleCanvas />
 
