@@ -18,8 +18,7 @@ export default function SplitText({ text, className = "", delay = 0, stagger = 0
           <motion.span
             className="inline-block"
             initial={{ y: "110%", opacity: 0 }}
-            whileInView={{ y: "0%", opacity: 1 }}
-            viewport={{ once }}
+            animate={{ y: "0%", opacity: 1 }}
             transition={{
               duration: 0.55,
               delay: delay + wi * stagger,
